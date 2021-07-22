@@ -1,6 +1,5 @@
-# sc_app
-
-A new Flutter project.
+# ScApp
+App to schedule and manage team activities
 
 ## Getting Started
 
