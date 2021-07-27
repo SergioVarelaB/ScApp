@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'Home/Home.dart';
+import 'Home/Profile.dart';
+import 'Home/Teams.dart';
 
 void main() {
   runApp(MyApp());
@@ -69,73 +72,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         unselectedItemColor: HexColor('#FFFFFF'),
         onTap: _onItemTapped,
       ),
-    );
-  }
-}
-
-
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: new Container(
-        padding: new EdgeInsets.only(top: 36.0),
-        child: new Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              'Hola, Pablito!!',
-              style: new TextStyle(
-                  fontSize: 36.0,
-                  fontFamily: 'Roboto Bold',
-                  color: HexColor('#FFFFFF')
-              ),
-            )
-          ],
-        ),
-      ),
-      backgroundColor: HexColor('#494646'),
-    );
-  }
-}
-
-
-class Team extends StatelessWidget {
-  const Team({Key? key}) : super(key: key);
-
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: HexColor('#494646'),
-    );
-  }
-}
-
-
-class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
-
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: new Container(
-              padding: new EdgeInsets.only(top: 36.0),
-              child: new Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  new Text(
-                    'Hola, Pablito!!',
-                    style: new TextStyle(
-                        fontSize: 36.0,
-                        fontFamily: 'Roboto Bold',
-                        color: HexColor('#FFFFFF')
-                    ),
-                  )
-                ],
-              ),
-            ),
-      backgroundColor: HexColor('#494646'),
     );
   }
 }
