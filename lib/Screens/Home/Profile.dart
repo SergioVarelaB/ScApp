@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:hexcolor/hexcolor.dart';
-import '../Utils/colors.dart';
 
 class Profile  extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);

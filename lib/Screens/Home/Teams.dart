@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import '../Utils/colors.dart';
+import 'package:sc_app/Utils/colors.dart';
 
 
 class Team extends StatelessWidget {
