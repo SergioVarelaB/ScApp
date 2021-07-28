@@ -63,7 +63,7 @@ class ResponseHelper {
         Uri.parse(url),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
-          HttpHeaders.authorizationHeader: 'Bearer' + token
+          HttpHeaders.authorizationHeader: 'Bearer ' + token
         }
     );
     final responseBody = Response<T>.fromJson(jsonDecode(response.body));
