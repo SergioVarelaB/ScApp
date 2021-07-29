@@ -74,7 +74,7 @@ Widget createEventsList(Response<List<Event>> response) {
           style: TextStyles.itemTitle(),
         ),
         subtitle: Text(
-          Utils.formatDateTime(event.startTime),
+          Utils.formatDateFormat(event.startTime,"MMM, E d H:mm"),
           style: TextStyles.itemSubtitle(),
         ),
         onTap: () => showEventDialog(context,event),
@@ -100,7 +100,7 @@ void showEventDialog(BuildContext context,Event event) {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Fecha: " + Utils.formatDate(event.startTime)),
+              Text("Fecha: " + Utils.formatDateFormat(event.startTime,"MMMEd")),
               Text("Hora: ${Utils.formatTime(event.startTime)} - ${Utils.formatTime(event.endTime)}"),
               Text("Equipo: ${(team != null)? team.name : '-'}")
             ],

@@ -178,7 +178,7 @@ List<Widget> getTeamsList(List<DayOff> dayoff) {
     final teamColumn = TaskColumn(
       icon: Icons.today_outlined,
       iconBackgroundColor: LightColors.getRandomColor(),
-      title: Utils.formatDate(day.day),
+      title: Utils.formatDateFormat(day.day, "MMMEd"),
       subtitle: 'Dia asignado por ti mismo',
     );
     list.add(teamColumn);
