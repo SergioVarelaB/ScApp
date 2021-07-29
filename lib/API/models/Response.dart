@@ -1,7 +1,7 @@
 class Response<T> {
   final bool error;
   final String message;
-  final T data;
+  final T? data;
 
   Response({
     required this.data,

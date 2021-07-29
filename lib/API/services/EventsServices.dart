@@ -10,7 +10,7 @@ class EventsServices {
     final url = _prefix + "upcoming";
     final response = await ResponseHelper.get<List<dynamic>>(url);
     final events = <Event>[];
-    for(Map<String,dynamic> e in response.data){
+    for(Map<String,dynamic> e in response.data!){
       events.add(Event.fromJson(e));
     }
     return new Response(data: events, message: response.message, error: response.error);

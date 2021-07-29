@@ -60,9 +60,9 @@ Widget createEventsList(Response<List<Event>> response) {
   return ListView.builder(
     scrollDirection: Axis.vertical,
     shrinkWrap: true,
-    itemCount: response.data.length,
+    itemCount: response.data!.length,
     itemBuilder: (context, index) {
-      final event = response.data[index];
+      final event = response.data![index];
       return ListTile(
         title: Text(
           event.name,

@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Bienvenido"))
       );
-      await AppSharedPreferences.setToken(response.data!);
+      await AppSharedPreferences.setToken(response.data!.token!);
       Navigator.pushNamed(context, "/main");
     }
   }
