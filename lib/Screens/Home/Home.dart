@@ -72,10 +72,39 @@ Widget createEventsList(Response<List<Event>> response) {
           Utils.formatDateTime(event.startTime),
           style: TextStyles.itemSubtitle(),
         ),
+        onTap: () => showEventDialog(context,event),
       );
     },
   );
 }
+
+void showEventDialog(BuildContext context,Event event) {
+  showDialog(context: context, builder: (buildContext) {
+    return SimpleDialog(
+      title: Text(event.name),
+      children: [
+
+        Padding(
+            padding: const EdgeInsets.only(
+              left: 10,
+              top: 0,
+              right: 5,
+              bottom: 20,
+            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Fecha: " + Utils.formatDate(event.startTime)),
+              Text("Hora: ${Utils.formatTime(event.startTime)} - ${Utils.formatTime(event.endTime)}")
+            ],
+          ),
+        ),
+      ],
+    );
+  });
+}
+
+
 
 
 

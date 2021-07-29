@@ -10,4 +10,9 @@ class Utils {
     final DateFormat formatter = DateFormat('yyyy-MM-dd H:mm');
     return formatter.format(date);
   }
+
+  static String formatTime(DateTime date) {
+    final DateFormat formatter = DateFormat('H:mm');
+    return formatter.format(date);
+  }
 }
