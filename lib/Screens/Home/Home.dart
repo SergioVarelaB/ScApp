@@ -85,6 +85,7 @@ Widget createEventsList(Response<List<Event>> response) {
 
 void showEventDialog(BuildContext context,Event event) {
   showDialog(context: context, builder: (buildContext) {
+    final team = Provider.of<UserChangeNotifier>(context,listen: false).getTeamByID(event.teamID);
     return SimpleDialog(
       title: Text(event.name),
       children: [
@@ -100,7 +101,8 @@ void showEventDialog(BuildContext context,Event event) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Fecha: " + Utils.formatDate(event.startTime)),
-              Text("Hora: ${Utils.formatTime(event.startTime)} - ${Utils.formatTime(event.endTime)}")
+              Text("Hora: ${Utils.formatTime(event.startTime)} - ${Utils.formatTime(event.endTime)}"),
+              Text("Equipo: ${(team != null)? team.name : '-'}")
             ],
           ),
         ),

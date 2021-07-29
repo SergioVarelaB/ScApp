@@ -30,4 +30,14 @@ class UserChangeNotifier extends ChangeNotifier {
   User getUser() {
     return _user;
   }
+
+  Team? getTeamByID(int teamID) {
+    for(Team team in _user.teams) {
+      print(team.name);
+      if(team.id == teamID) {
+        return team;
+      }
+    }
+    return null;
+  }
 }
