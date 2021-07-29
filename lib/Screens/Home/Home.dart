@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:provider/provider.dart';
 import 'package:sc_app/API/models/Event.dart';
 import 'package:sc_app/API/models/Response.dart';
 import 'package:sc_app/API/services/EventsServices.dart';
 import 'package:sc_app/Utils/TextStyles.dart';
 import 'package:sc_app/Utils/Utils.dart';
+import 'package:sc_app/changeNotifiers/UserChangeNotifier.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,21 +17,24 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   late Future<Response<List<Event>>> eventsFuture;
+  late final String userName;
 
   @override
   void initState() {
     eventsFuture = EventsServices.getUpcoming();
+    userName = Provider.of<UserChangeNotifier>(context,listen: false).getUser().name;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Column(
         children: [
           SizedBox(height: 30),
           Text(
-            'Bienvenido',
+            'Hola, $userName',
             style: TextStyle(
                 fontSize: 36.0,
                 fontFamily: 'Roboto Bold',

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sc_app/API/services/UserServices.dart';
 import 'package:sc_app/Utils/AppSharedPreferences.dart';
+import 'package:sc_app/changeNotifiers/UserChangeNotifier.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -33,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'Correo',
               ),
             ),
+            SizedBox(height: 30),
             TextField(
               controller: passwordField,
               obscureText: true,
@@ -56,6 +59,7 @@ class _LoginPageState extends State<LoginPage> {
         SnackBar(content: Text(response.message))
       );
     } else {
+      Provider.of<UserChangeNotifier>(context,listen: false).setUser(response.data!.user!);
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Bienvenido"))
       );
